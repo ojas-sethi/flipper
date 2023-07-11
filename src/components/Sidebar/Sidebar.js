@@ -10,12 +10,13 @@ import BookmarkSharpIcon from "@mui/icons-material/BookmarkSharp";
 import ListAltSharpIcon from "@mui/icons-material/ListAltSharp";
 import AccountBoxSharpIcon from "@mui/icons-material/AccountBoxSharp";
 import MoreHorizSharpIcon from "@mui/icons-material/MoreHorizSharp";
+import { Button } from "@material-ui/core";
 
 const Sidebar = (props) => {
   return (
     <div className="sidebar">
       {/* App Icon/ Flipper Icon */}
-      <TwitterIcon />
+      <TwitterIcon className="sidebar__twitterIcon" />
       <SidebarOption active Icon={HomeIcon} text="Home" />
       <SidebarOption Icon={SearchSharpIcon} text="Explore" />
       <SidebarOption Icon={NotificationsSharpIcon} text="Notifications" />
@@ -24,6 +25,10 @@ const Sidebar = (props) => {
       <SidebarOption Icon={ListAltSharpIcon} text="Lists" />
       <SidebarOption Icon={AccountBoxSharpIcon} text="Profile" />
       <SidebarOption Icon={MoreHorizSharpIcon} text="Options" />
+
+      <Button variant="outlined" className="sidebar__post" fullWidth>
+        Post
+      </Button>
     </div>
   );
 };

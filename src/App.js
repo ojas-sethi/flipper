@@ -1,15 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Feed from "./components/Feed/Feed";
 
 function App() {
   return (
     // BEM
     <div className="app">
-      <h1>Building a Flipper App</h1>
       {/* Sidebar Component, which is not scrollable */}
       <Sidebar />
-      {/* Feed component, which is scrollable */}
+      <Feed />
       {/* Widgets, also not scrollable */}
     </div>
   );

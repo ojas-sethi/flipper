@@ -4,6 +4,7 @@ import PostBox from "./PostBox";
 import Post from "../Post/Post";
 import { db } from "./firebaseFile";
 import { getFirestore, collection, onSnapshot } from "firebase/firestore";
+import FlipMove from "react-flip-move";
 
 const Feed = () => {
   const [posts, setPosts] = useState([]);
@@ -23,17 +24,19 @@ const Feed = () => {
       {/* TweetBox */}
       <PostBox />
       {/* Posts */}
-
-      {posts.map((post) => (
-        <Post
-          displayName={post.displayName}
-          username={post.username}
-          verified={post.verified}
-          text={post.text}
-          avatar={post.avatar}
-          image={post.image}
-        />
-      ))}
+      <FlipMove>
+        {posts.map((post) => (
+          <Post
+            key={post.id}
+            displayName={post.displayName}
+            username={post.username}
+            verified={post.verified}
+            text={post.text}
+            avatar={post.avatar}
+            image={post.image}
+          />
+        ))}
+      </FlipMove>
     </div>
   );
 };

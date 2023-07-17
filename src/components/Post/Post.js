@@ -12,26 +12,24 @@ const Post = ({ displayName, username, verified, text, image, avatar }) => {
   return (
     <div className="post">
       <div className="post__avatar">
-        <Avatar src="https://media.licdn.com/dms/image/C4D03AQFd9B0nhxddOg/profile-displayphoto-shrink_800_800/0/1643489954675?e=1694649600&v=beta&t=kV_I9JsM8v0O8T1vNb05WqIEN-D-jZEMMLEpn_j7gWs" />
+        <Avatar src={avatar} />
       </div>
       <div className="post__body">
         <div className="post__header">
           <div className="post__headerText">
             <h3>
-              Ojas Sethi{" "}
+              {displayName}{" "}
               <span className="post__headerSpecial">
-                <VerifiedUserIcon className="post__badge" /> @ojassethi
+                {verified && <VerifiedUserIcon className="post__badge" />} @
+                {username}
               </span>
             </h3>
           </div>
           <div className="post_headerDescription">
-            <p>This is obbviously not a Twitter ripoff.</p>
+            <p>{text}</p>
           </div>
         </div>
-        <img
-          src="https://media3.giphy.com/media/xTiN0CNHgoRf1Ha7CM/giphy.gif?cid=ecf05e47jgk6cxn5xp22joxipipci8f0bo0b3krsp507obyy&ep=v1_gifs_gifId&rid=giphy.gif&ct=g"
-          alt="A funny gif that you unfortunately can't see."
-        />
+        <img src={image} alt="A funny gif that you unfortunately can't see." />
         <div className="post__footer">
           <ChatBubbleOutlineIcon fontSize="small" />
           <RepeatIcon fontSize="small" />

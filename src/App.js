@@ -11,7 +11,7 @@ function App() {
       {/* Sidebar Component, which is not scrollable */}
       <Sidebar />
       <Feed />
-      <Widgets />
+      {/* <Widgets /> */}
       {/* Widgets, also not scrollable */}
     </div>
   );
